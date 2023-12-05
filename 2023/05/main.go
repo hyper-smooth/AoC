@@ -103,7 +103,6 @@ func seedsP2() []int {
 		start := utils.StringToInt(ms[i])
 		end := utils.StringToInt(ms[i+1])
 		for j := start; j < start+end; j++ {
-
 			// I was originally appending to an array which caused the runtime of the entire program to be around 3 minutes
 			// newSeeds = append(newSeeds, j)
 
