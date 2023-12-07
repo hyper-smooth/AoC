@@ -40,7 +40,7 @@ humidity-to-location map:
 56 93 4`
 
 func main() {
-	lines := strings.Split(input, "\n\n")
+	lines := strings.Split(sample, "\n\n")
 	seedList := seedsP2()
 	lowest := -1
 	mappers := buildMaps(lines)
@@ -93,24 +93,25 @@ func buildMaps(lines []string) [][]mapper {
 	return rVal
 }
 func seedsP2() []int {
-	ms := strings.Split(mySeeds, " ")
+	ms := strings.Split(seedsSample, " ")
 	//Before
-	// newSeeds := []int{}
+	newSeeds := []int{}
 	//After
-	newSeeds := make([]int, len(ms))
+	// newSeeds := make([]int, len(ms))
 
 	for i := 0; i < len(ms); i += 2 {
 		start := utils.StringToInt(ms[i])
 		end := utils.StringToInt(ms[i+1])
+
 		for j := start; j < start+end; j++ {
 			// I was originally appending to an array which caused the runtime of the entire program to be around 3 minutes
-			// newSeeds = append(newSeeds, j)
+			newSeeds = append(newSeeds, j)
 
 			// preallocating the slice and inserting into index reduced runtime to 500ms
-			newSeeds[i] = j
+			// newSeeds[i] = j
 		}
 	}
-
+	fmt.Println(newSeeds)
 	return newSeeds
 }
 
