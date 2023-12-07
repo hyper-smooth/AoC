@@ -1,0 +1,4 @@
+package main
+
+var input = `Time:        44     89     96     91
+Distance:   277   1136   1890   1768`
